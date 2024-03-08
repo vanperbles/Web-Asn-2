@@ -9,6 +9,7 @@
 	"author": "Sarfo George",
 	"license": "ISC",
 	"dependencies": {
+		"dotenv": "^16.4.5",
 		"express": "^4.18.3",
 		"express-handlebars": "^7.1.2",
 		"nodemon": "^3.1.0"

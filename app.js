@@ -1,13 +1,16 @@
 // Import required modules
 var express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 var path = require('path');
 var app = express();
 const exphbs = require('express-handlebars');
 const fs = require('fs'); // Import the 'fs' module
 const bodyParser = require('body-parser');
 
-// Set the port for the application
-const port = process.env.PORT || 3000;
+
+const hostname = process.env.HOST;
+const port = process.env.PORT 
 
 // Read the JSON data from the file
 const filePath = path.join(__dirname, 'datasetB.json');
@@ -193,7 +196,7 @@ app.get('*', function(req, res) {
 
 // Start the Express application and listen on the specified port
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://${hostname}:${port}`);
 });
 
 
