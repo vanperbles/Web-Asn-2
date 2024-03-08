@@ -47,7 +47,7 @@ app.set('view engine', 'hbs');
 // Define a route for the root path ('/')
 app.get('/', function(req, res) {
   // Render the 'partials/index.hbs' template with the provided data
-  res.render('partials/index', { title: 'Express' });
+  res.render('index', { title: 'Express' });
 });
 
 // Route for loading the attached JSON file
