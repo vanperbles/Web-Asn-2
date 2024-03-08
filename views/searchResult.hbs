@@ -1,0 +1,26 @@
+ <form method="POST" action="/data/search/prdName">
+        <h1> JSON Data Search by Partial Product Name </h1>
+        <label for="product_name">Partial Product Name:</label>
+        <input type="text" id="product_name" name="product_name" placeholder="Enter Partial Product Name">
+        <input type="submit" value="Search">
+    </form>
+
+    {{#if result}}
+        {{#if result.length}}
+            <h2>Search Result</h2>
+            <ul>
+                {{#each result}}
+                    <li>
+                        <p>Category: {{category}}</p>
+                        <p>Actual Price: ${{actual_price}}</p>
+                        <p>Rating: {{rating}}</p>
+                        <p>Title: {{title}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No matching products found</p>
+        {{/if}}
+    {{else}}
+        <p>No matching products found</p>
+    {{/if}}

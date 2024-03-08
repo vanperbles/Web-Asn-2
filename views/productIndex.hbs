@@ -1,0 +1,9 @@
+<h1>Product Details</h1>
+    {{#if product}}
+        <p>ASIN: {{product.asin}}</p>
+        <p>Name: {{product.name}}</p>
+        <p>Price: {{product.price}}</p>
+        <!-- Add more properties as needed -->
+    {{else}}
+        <p>Product not found</p>
+    {{/if}}

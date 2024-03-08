@@ -1,0 +1,28 @@
+<h1>All Books Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ASIN</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Reviews</th>
+                <th>Stars</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each books}}
+            
+                {{#if reviews}}
+                    <tr class="{{#if isZeroReviews}}zero-reviews{{/if}}">
+                        <td>{{asin}}</td>
+                        <td>{{title}}</td>
+                        <td>${{price}}</td>
+                        <td>{{categoryName}}</td>
+                        <td>{{displayReviews reviews}}</td>
+                        <td>{{stars}}</td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+        </tbody>
+    </table>

@@ -1,0 +1,24 @@
+<form method="POST" action="/data/search/prdID">
+        <h1> JSON Data Search </h1>
+        <label for="product_id">Product ID:</label>
+        <input type="text" id="product_id" name="product_id" placeholder="Enter Product ID">
+        <input type="submit" value="Search">
+    </form>
+
+    {{#if result}}
+        <h2>Search Result</h2>
+        {{#if result.asin}}
+            <p>Product ID: {{result.asin}}</p><br>
+            <p>Name: {{result.title}}</p><br>
+            <p>Price: {{result.price}}</p><br>
+            <p>Reviews: {{result.reviews}}</p><br>
+            <p>Category Name: {{result.categoryName}}</p><br>
+            <p>Stars: {{result.stars}}</p><br>
+            
+            
+        {{else}}
+            <p>No product found with ID: {{productId}}</p>
+        {{/if}}
+    {{else}}
+         <p>No result found: {{productId}} </p>
+    {{/if}}
